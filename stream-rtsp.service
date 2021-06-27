@@ -1,0 +1,13 @@
+[Unit]
+Description=auto start stream
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/home/andrew/stream-rtsp
+User=andrew
+WorkingDirectory=/home/andrew
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

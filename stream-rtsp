@@ -1,0 +1,5 @@
+# No rotate 
+raspivid -o - -t 0 -w 1280 -h 720 -fps 30 -b 2500000 -awb incandescent | cvlc -vvv stream:///dev/stdin --sout '#rtp{access=udp,sdp=rtsp://:8554/stream}' :demux=h264
+
+# Rotate 180
+#raspivid -o - -t 0 -w 1280 -h 720 -fps 30 -b 2500000 -rot 180 -awb incandescent | cvlc -vvv stream:///dev/stdin --sout '#rtp{access=udp,sdp=rtsp://:8554/stream}' :demux=h264
